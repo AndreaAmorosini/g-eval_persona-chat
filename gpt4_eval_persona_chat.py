@@ -4,9 +4,9 @@ from tqdm import tqdm
 import time
 
 client = AzureOpenAI(
-    azure_endpoint="https://aamo-m620aile-eastus2.cognitiveservices.azure.com/",
+    azure_endpoint="ENDPOINT",
     api_version="2024-10-21",
-    api_key="54kChHNhdsd4wdgmGEbr24ZhHhDjGeHD0P8xPDN1zKYm8N442jxaJQQJ99BAACHYHv6XJ3w3AAAAACOGhFXk"
+    api_key="API_KEY"
 )
 
 
@@ -64,7 +64,7 @@ def evaluate_response(prompt):
                 {"role": "user", "content": prompt},
             ],
             temperature=1,
-            max_tokens=50,
+            max_tokens=100,
             top_p=1,
             frequency_penalty = 0,
             presence_penalty = 0,
