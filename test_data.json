@@ -1,0 +1,183 @@
+[
+  {
+    "context": "hi there how are you doing this evening ?\nhi , sitting here with my three dogs watching the olympics !\nnice i do not want to go back to work i am a waitress\ni love being in a polyamorous open relationship !\niol well i wish i was brave enough to do that\nmy father was a salesman , helps my dog walking business now\nthat is nice i've a motorbike don't know what car to get for winter\nvery very cool . sounds fun\nyes i had them put red with blue stripes to be shinny for when racing\nso is my dog , wow so cool\nso what do you do in your spare time ?\nlead singer for a band , music teacher\nwow nice are you really good ?\nmillions of plays on soundcloud\nreally would you share or are you shy\n",
+    "fact": "your persona: i also have a dog walking business.\nyour persona: i've three dogs.\nyour persona: my father was a door to door salesman.\nyour persona: i am in an open polyamorous relationship.\nyour persona: i like to watch the olympics.\n",
+    "annotators": [
+      "shikib",
+      "maxine",
+      "mckenna"
+    ],
+    "responses": [
+      {
+        "response": "ha ha i'm so shy\n",
+        "model": "Original Ground Truth",
+        "Understandable": [
+          1,
+          1,
+          1
+        ],
+        "Natural": [
+          3,
+          3,
+          3
+        ],
+        "Maintains Context": [
+          3,
+          3,
+          3
+        ],
+        "Engaging": [
+          1,
+          2,
+          1
+        ],
+        "Uses Knowledge": [
+          0,
+          0,
+          0
+        ],
+        "Overall": [
+          3,
+          4,
+          4
+        ]
+      },
+      {
+        "response": "i know what you mean spend most nights cuddling my dog and star watching\n",
+        "model": "KV-MemNN",
+        "Understandable": [
+          1,
+          1,
+          1
+        ],
+        "Natural": [
+          3,
+          3,
+          3
+        ],
+        "Maintains Context": [
+          1,
+          1,
+          1
+        ],
+        "Engaging": [
+          3,
+          3,
+          3
+        ],
+        "Uses Knowledge": [
+          1,
+          0,
+          1
+        ],
+        "Overall": [
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "response": "i am a little shy but i am a little shy\n",
+        "model": "Seq2Seq",
+        "Understandable": [
+          1,
+          1,
+          1
+        ],
+        "Natural": [
+          2,
+          1,
+          2
+        ],
+        "Maintains Context": [
+          3,
+          3,
+          3
+        ],
+        "Engaging": [
+          1,
+          2,
+          2
+        ],
+        "Uses Knowledge": [
+          0,
+          0,
+          0
+        ],
+        "Overall": [
+          3,
+          3,
+          3
+        ]
+      },
+      {
+        "response": "i am not . i am a student .\n",
+        "model": "Language Model",
+        "Understandable": [
+          0,
+          0,
+          1
+        ],
+        "Natural": [
+          2,
+          2,
+          3
+        ],
+        "Maintains Context": [
+          1,
+          1,
+          1
+        ],
+        "Engaging": [
+          1,
+          2,
+          2
+        ],
+        "Uses Knowledge": [
+          0,
+          0,
+          0
+        ],
+        "Overall": [
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "response": "i only feel comfortable sharing my music with my dogs !\n",
+        "model": "New Human Generated",
+        "Understandable": [
+          1,
+          1,
+          1
+        ],
+        "Natural": [
+          3,
+          3,
+          3
+        ],
+        "Maintains Context": [
+          3,
+          3,
+          3
+        ],
+        "Engaging": [
+          3,
+          3,
+          3
+        ],
+        "Uses Knowledge": [
+          1,
+          1,
+          1
+        ],
+        "Overall": [
+          5,
+          5,
+          5
+        ]
+      }
+    ]
+  }
+]

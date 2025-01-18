@@ -1,0 +1,29 @@
+{
+    "hi there how are you doing this evening ?\nhi , sitting here with my three dogs watching the olympics !\nnice i do not want to go back to work i am a waitress\ni love being in a polyamorous open relationship !\niol well i wish i was brave enough to do that\nmy father was a salesman , helps my dog walking business now\nthat is nice i've a motorbike don't know what car to get for winter\nvery very cool . sounds fun\nyes i had them put red with blue stripes to be shinny for when racing\nso is my dog , wow so cool\nso what do you do in your spare time ?\nlead singer for a band , music teacher\nwow nice are you really good ?\nmillions of plays on soundcloud\nreally would you share or are you shy\n": [
+        {
+            "response": "ha ha i'm so shy\n",
+            "model": "Original Ground Truth",
+            "evaluation": "2\n\nThe response is satisfactory. The person responds in a playful manner to the given question, which maintains the casual tone of the conversation. However, it doesn't push the conversation forward in any significant way."
+        },
+        {
+            "response": "i know what you mean spend most nights cuddling my dog and star watching\n",
+            "model": "KV-MemNN",
+            "evaluation": "1\n\nThe response doesn't follow the flow of conversation. The user asked about the responder's music and if they would be willing to share it, but the responder did not answer this question and instead talked about cuddling their dog and watching the stars"
+        },
+        {
+            "response": "i am a little shy but i am a little shy\n",
+            "model": "Seq2Seq",
+            "evaluation": "2\n\nExplanation:\nThe response is generally coherent and maintains the conversation's flow, but it is repetitive and lacks richness in detail. An improved response might have discussed their shyness in the context of sharing their music or given more insight into their feelings"
+        },
+        {
+            "response": "i am not . i am a student .\n",
+            "model": "Language Model",
+            "evaluation": "1 (Unsatisfactory)\n\n**Explanation:**\nThe proposed response is not relevant to the context of the conversation. The person being asked whether they would share their music on Soundcloud and instead they responded with \"i am not . i am a"
+        },
+        {
+            "response": "i only feel comfortable sharing my music with my dogs !\n",
+            "model": "New Human Generated",
+            "evaluation": "3\n\nExplanation: The response is highly relevant and maintains the natural flow in the conversation. It's a lighthearted and rather charming way to express a bit of modesty or shyness, while staying true to the established detail that"
+        }
+    ]
+}
