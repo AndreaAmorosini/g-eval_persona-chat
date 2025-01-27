@@ -4,9 +4,9 @@ from tqdm import tqdm
 import time
 
 client = AzureOpenAI(
-    azure_endpoint="ENDPOINT",
+    azure_endpoint="endpoint",
     api_version="2024-10-21",
-    api_key="API_KEY"
+    api_key="API_KEY",
 )
 
 
@@ -53,9 +53,10 @@ def format_prompt(context, response):
 
 # Call Azure OpenAI to evaluate a response
 def evaluate_response(prompt):
+    ignore = 0
     try:
         response = client.chat.completions.create(
-            model="gpt-4",  # Replace with your GPT-4 deployment name
+            model="gpt-4-32k",  # Replace with your GPT-4 deployment name
             messages=[
                 {
                     "role": "system",
@@ -71,11 +72,19 @@ def evaluate_response(prompt):
             stop=None,
             n = 20
         )
+        time.sleep(0.5)
+        
+        all_responses = [response.choices[i].message.content for i in range(len(response.choices))]
+        return all_responses
 
-        return response.choices[0].message.content
+        # return response.choices[0].message.content
     except Exception as e:
-        print(f"Error: {str(e)}")
-        return f"Error: {str(e)}"
+        print(e)
+        if "limit" in str(e):
+            time.sleep(2)
+        else:
+            ignore += 1
+            print("ignored", ignore)
 
 
 # Process dataset
@@ -90,13 +99,13 @@ def process_dataset(dataset):
                     response = response_data["response"]
                     model = response_data["model"]
                     prompt = format_prompt(context, response)
-                    evaluation = evaluate_response(prompt)
+                    evaluations = evaluate_response(prompt)
                     results.append(
                         {
                             "context": context,
                             "response": response,
                             "model": model,
-                            "evaluation": evaluation,
+                            "evaluation": evaluations,
                         }
                     )
                     pbar_sub.update(1)
@@ -127,7 +136,7 @@ def aggregate_results(results):
 # Main script
 if __name__ == "__main__":
     # dataset_file = "pc_usr_data.json"  # Path to your dataset
-    dataset_file = "pc_usr_data.json"
+    dataset_file = "test_data.json"
     output_file = "evaluations.json"  # Output file for evaluations
 
     print("Loading dataset...")
