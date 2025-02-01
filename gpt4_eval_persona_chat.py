@@ -4,9 +4,9 @@ from tqdm import tqdm
 import time
 
 client = AzureOpenAI(
-    azure_endpoint="endpoint",
+    azure_endpoint="",
     api_version="2024-10-21",
-    api_key="API_KEY",
+    api_key="",
 )
 
 
@@ -56,7 +56,7 @@ def evaluate_response(prompt):
     ignore = 0
     try:
         response = client.chat.completions.create(
-            model="gpt-4-32k",  # Replace with your GPT-4 deployment name
+            model="gpt-4",  # Replace with your GPT-4 deployment name
             messages=[
                 {
                     "role": "system",
@@ -65,14 +65,14 @@ def evaluate_response(prompt):
                 {"role": "user", "content": prompt},
             ],
             temperature=1,
-            max_tokens=100,
+            max_tokens=1,
             top_p=1,
             frequency_penalty = 0,
             presence_penalty = 0,
             stop=None,
             n = 20
         )
-        time.sleep(0.5)
+        time.sleep(2)
         
         all_responses = [response.choices[i].message.content for i in range(len(response.choices))]
         return all_responses
@@ -81,7 +81,7 @@ def evaluate_response(prompt):
     except Exception as e:
         print(e)
         if "limit" in str(e):
-            time.sleep(2)
+            time.sleep(5)
         else:
             ignore += 1
             print("ignored", ignore)
@@ -135,8 +135,8 @@ def aggregate_results(results):
 
 # Main script
 if __name__ == "__main__":
-    # dataset_file = "pc_usr_data.json"  # Path to your dataset
-    dataset_file = "test_data.json"
+    dataset_file = "pc_usr_data.json"  # Path to your dataset
+    # dataset_file = "test_data.json"
     output_file = "evaluations.json"  # Output file for evaluations
 
     print("Loading dataset...")
