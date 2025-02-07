@@ -5,13 +5,13 @@ Lo script **gpt4_eval_persona_chat.py** contiene la logica utilizzata per la gen
 
 Mentre il notebook **data_explorer.ipynb** contiene la logica per la visualizzazione e la valutazione, tramite analisi di correlazione, dei risultati ottenuti
 
-I risultati con le 20 valutazioni per risposta da PersonaChat sono disponibili all'interno del file [evaluations_pc.json](./evaluations_pc.json).
+I risultati con le 20 valutazioni per risposta da PersonaChat sono disponibili all'interno del file [evaluations_pc.json](./results/evaluations_pc.json).
 
-Mentre i risultati giustificati con spiegazione sono disponibili all'interno del file [evaluations_justified.json](./evaluations_justified.json).
+Mentre i risultati giustificati con spiegazione sono disponibili all'interno del file [evaluations_justified.json](./results/evaluations_justified.json).
 
-I risultati generati da TopicalChat sono disponibili all'interno del file [evaluations_tc_usr_data.json](./evaluations_tc_usr_data.json).
+I risultati generati da TopicalChat sono disponibili all'interno del file [evaluations_tc_usr_data.json](./results/evaluations_tc_usr_data.json).
 
-I risultati generati da Fine-grained Evaluation of Dialogue sono disponibili all'interno del file [evaluations_fed_data.json](./evaluations_fed_data.json).
+I risultati generati da Fine-grained Evaluation of Dialogue sono disponibili all'interno del file [evaluations_fed_data.json](./results/evaluations_fed_data.json).
 
 ## Installazione:
 ``` bash
