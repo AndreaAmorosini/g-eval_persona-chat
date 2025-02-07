@@ -4,3 +4,7 @@ Questo progetto applica il framework G-Eval, descritto nel relativo paper, al da
 Lo script **gpt4_eval_persona_chat.py** contiene la logica utilizzata per la generazione delle risposte tramite chiamata API su Azure OpenAI Services.
 
 Mentre il notebook **data_explorer.ipynb** contiene la logica per la visualizzazione e la valutazione, tramite analisi di correlazione, dei risultati ottenuti
+
+## Installazione:
+``` bash
+conda env create -f environment.yml
