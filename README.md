@@ -5,6 +5,10 @@ Lo script **gpt4_eval_persona_chat.py** contiene la logica utilizzata per la gen
 
 Mentre il notebook **data_explorer.ipynb** contiene la logica per la visualizzazione e la valutazione, tramite analisi di correlazione, dei risultati ottenuti
 
+I risultati con le 20 valutazioni per risposta sono disponibili all'interno del file [evaluations.json](./evaluations.json).
+
+Mentre i risultati giustificati con spiegazione sono disponibili all'interno del file [evaluations_justified.json](./evaluations_justified.json).
+
 ## Installazione:
 ``` bash
 conda env create -f environment.yml
