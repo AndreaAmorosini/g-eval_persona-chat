@@ -70,7 +70,7 @@ def evaluate_response(prompt):
             frequency_penalty = 0,
             presence_penalty = 0,
             stop=None,
-            n = 20
+            n = 1
         )
         time.sleep(2)
         
@@ -113,6 +113,32 @@ def process_dataset(dataset):
             pbar_main.update(1)
     return results
 
+#Funzione per processare il dataset fed_data
+def process_dataset1(dataset):
+    results = []
+    skipped = 0
+    with tqdm(total=len(dataset), desc="Processing Dataset") as pbar_main:
+        for entry in dataset:
+            try:
+                context = entry["context"]
+                response = entry["response"]
+                system = entry["system"]
+                prompt = format_prompt(context, response)
+                evaluations = evaluate_response(prompt)
+                results.append(
+                    {
+                        "context": context,
+                        "response": response,
+                        "model": system,
+                        "evaluation": evaluations,
+                    }
+                )
+            except Exception as e:
+                skipped += 1
+            pbar_main.update(1)
+    print(f"Skipped {skipped} entries.")
+    return results
+
 
 # Save results to JSON
 def save_results(results, output_file):
@@ -135,15 +161,20 @@ def aggregate_results(results):
 
 # Main script
 if __name__ == "__main__":
-    dataset_file = "pc_usr_data.json"  # Path to your dataset
-    # dataset_file = "test_data.json"
-    output_file = "evaluations.json"  # Output file for evaluations
+    #dataset_file = "pc_usr_data.json"  # Path to your dataset
+    #dataset_file = "tc_usr_data_2.json"
+    dataset_file = "fed_data 2.json"
+    #dataset_file = "test_data.json"
+    output_file = "evaluations_fed_data.json"  # Output file for evaluations
 
     print("Loading dataset...")
     dataset = load_dataset(dataset_file)
 
     print("Processing dataset...")
-    evaluations = process_dataset(dataset)
+    if dataset_file == "fed_data 2.json":
+        evaluations = process_dataset1(dataset)
+    else:
+        evaluations = process_dataset(dataset)
 
     print("Aggregating results...")
     aggregated_results = aggregate_results(evaluations)
